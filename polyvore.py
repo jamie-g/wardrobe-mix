@@ -55,11 +55,11 @@ class PolyvoreSet(Polyvore):
         self.user_id = int(fields['createdby'])
         self.score = float(fields['score_total'])
         self.url = "http://www.polyvore.com" + fields['clickurl'].replace("..", "")
-
         self._things = []
 
     def image_url(self, size="l"):
         base_url = "http://ak2.polyvoreimg.com/cgi/img-set/cid/%d/id/%s/size/%s.jpg"
+        return base_url%(self.id, self.uuid, size)
         pass
 
     @property
