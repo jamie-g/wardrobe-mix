@@ -1,6 +1,19 @@
 <html>
-	<h1>Results</h1>
+<head></head>
+	<h1>Wardrobe Mix</h1>
+	<h2>Here's what you can pair with {{ terms }}:</h2>
 	{% for set in sets %}
-		<img src="{{ set.image_url() }}">
+		<img src="{{ set.image_url() }}" height=480 width=480 border=5><br>
+			<a href="{{ set.image_url("y") }}" target="_blank">
+			Enlarge image</a><br>
+	
 	{% endfor %}
+	{% if p == 1 %}
+	<a href="/search?q={{ terms }}&p={{ p+1 }}">next&#62;&#62;</a><br>
+	{% elif more == True %}
+	<a href="/search?q={{ terms }}&p={{ p-1 }}">&#60;&#60;prev</a>&nbsp;&nbsp;&nbsp;<a href="/search?q={{ terms }}&p={{ p+1 }}">next&#62;&#62;</a><br>
+	{% elif more == False %}
+	<a href="/search?q={{ terms }}&p={{ p-1 }}">&#60;&#60;prev</a><br>
+	{% endif %}
+	<a href="/">Search again</a>
 </html>

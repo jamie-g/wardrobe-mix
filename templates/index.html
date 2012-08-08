@@ -1,8 +1,10 @@
 <html>
+<h1>Wardrobe Mix</h1>
 <body>
+	<p><i>Love a unique piece of clothing, but not sure how to wear it? Find out how others have styled it before it becomes another artifact in your closet.</i></p>
 	<form name="input" action="{{ url_for("search") }}" method="get">
-	Search: <input type="text" name="q" /><input type="submit" value="Submit"><br />
+	<big>What do I wear with<input type="text" name="q" /></big><input type="submit" value="Submit">?<br />
 	</form>
-	This is the index page.
+	<p><i>For more search results, enter fewer search terms. For more exact results, put quotes around search terms. ex: "black peeptoe wedge"</i></p>
 </body>
 </html>

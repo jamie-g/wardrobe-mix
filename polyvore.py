@@ -35,7 +35,7 @@ class PolyvoreThing(Polyvore):
     def __str__(self):
         return "<PolyvoreThing:%d %s>"%(self.id, self.title)
 
-    def image_url(self, size="l"):
+    def image_url(self, size="y"):
         url_template = "http://ak2.polyvoreimg.com/cgi/img-thing/size/%s/tid/%d.png"
         return url_template%(size, self.id)
 
@@ -57,7 +57,7 @@ class PolyvoreSet(Polyvore):
         self.url = "http://www.polyvore.com" + fields['clickurl'].replace("..", "")
         self._things = []
 
-    def image_url(self, size="l"):
+    def image_url(self, size="y"):
         base_url = "http://ak2.polyvoreimg.com/cgi/img-set/cid/%d/id/%s/size/%s.jpg"
         return base_url%(self.id, self.uuid, size)
         pass
