@@ -1,9 +1,30 @@
-<html>
+<html><!-- the line below is required for access to the appMobi JS library -->
+<script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script>
+
+<script type="text/javascript" language="javascript">
+        // This event handler is fired once the AppMobi libraries are ready
+        function onDeviceReady() {
+            //use AppMobi viewport to handle device resolution differences if you want
+            //AppMobi.display.useViewport(768,1024);
+
+            //hide splash screen now that our app is ready to run
+            AppMobi.device.hideSplashScreen();
+        }
+
+        //initial event handler to detect when appMobi is ready to roll
+        document.addEventListener("appMobi.device.ready",onDeviceReady,false);
+</script> 
+
+
+
 <h1>Wardrobe Mix</h1>
 <body>
 	<p><i>Love a unique piece of clothing, but not sure how to wear it? Find out how others have styled it before it becomes another artifact in your closet.</i></p>
 	<form name="input" action="{{ url_for("search") }}" method="get">
 	<big>What do I wear with<input type="text" name="q" /></big><input type="submit" value="Submit">?<br />
+	</form>
+	<form name="input" action="{{ url_for("search") }}" method="get">
+	<big>Enter a barcode:<input type="text" name="q" /></big><input type="submit" value="Submit">?<br />
 	</form>
 	<p><i>For more search results, enter fewer search terms. For more exact results, put quotes around search terms. ex: "black peeptoe wedge"</i></p>
 </body>
