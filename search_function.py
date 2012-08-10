@@ -23,8 +23,6 @@ something = r.json['items'][0]['link']
 print something
 
 
-
-
 # results = http://www.google.com/search?q=http://www.polyvore.com/%s % barcode_text
 # setlist = []
 # for result in results:

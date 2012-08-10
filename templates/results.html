@@ -26,12 +26,11 @@
 			Enlarge image</a><br>
 	
 	{% endfor %}
-	{% if p == 1 %}
-	<a href="/search?q={{ terms }}&p={{ p+1 }}">next&#62;&#62;</a><br>
-	{% elif more == True %}
-	<a href="/search?q={{ terms }}&p={{ p-1 }}">&#60;&#60;prev</a>&nbsp;&nbsp;&nbsp;<a href="/search?q={{ terms }}&p={{ p+1 }}">next&#62;&#62;</a><br>
-	{% elif more == False %}
-	<a href="/search?q={{ terms }}&p={{ p-1 }}">&#60;&#60;prev</a><br>
+	{% if p > 1 %}
+	<a href="{{url_for("search", p=p-1, q=terms) | safe}}">&#60;&#60;prev</a>&nbsp;&nbsp;&nbsp;
+	{% endif %}
+	{% if more == True %}
+	<a href="{{url_for("search", p=p+1, q=terms) | safe}}">next&#62;&#62;</a><br>
 	{% endif %}
 	<a href="/">Search again</a>
 </html>

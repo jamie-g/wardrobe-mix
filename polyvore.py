@@ -58,8 +58,8 @@ class PolyvoreSet(Polyvore):
         self._things = []
 
     def image_url(self, size="y"):
-        base_url = "http://ak2.polyvoreimg.com/cgi/img-set/cid/%d/id/%s/size/%s.jpg"
-        return base_url%(self.id, self.uuid, size)
+        base_url = "http://ak2.polyvoreimg.com/cgi/img-set/cid/%d/size/%s.jpg"
+        return base_url%(self.id, size)
         pass
 
     @property
@@ -79,6 +79,10 @@ class PolyvoreSet(Polyvore):
 
     def __str__(self):
         return ""
+
+class GooglePolyvoreSet(PolyvoreSet):
+    def __init__(self, id):
+        self.id = id
 
 
 if __name__ == "__main__":

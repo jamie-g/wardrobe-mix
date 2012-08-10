@@ -4,6 +4,7 @@ import polyvore
 app = Flask(__name__)
 import logging
 import requests
+import google_scrape
 logger = app.logger
 
 GOOGLE_URL = "https://www.googleapis.com/shopping/search/v1/public/products?country=US"
@@ -53,10 +54,12 @@ def search():
 
 	if is_barcode(terms):
 		logger.debug("%s is a barcode"%terms)
-		terms = get_title_from_google(terms)
-		logger.debug("Our new terms are %s from google"%terms)
-
-	results = polyvore.PolyvoreSet.search(terms)
+		new_terms = get_title_from_google(terms)
+		logger.debug("Our new terms are %s from google"%new_terms)
+		results = google_scrape.get_polyvore_from_google(new_terms)
+	else:
+		results = polyvore.PolyvoreSet.search(terms)
+	
 	logger.debug("Result set is %d items"%(len(results)))
 
 	if len(results) > 0:
