@@ -1,25 +1,8 @@
-<html><!-- the line below is required for access to the appMobi JS library -->
-<head><script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script>
-
-<script type="text/javascript" language="javascript">
-        // This event handler is fired once the AppMobi libraries are ready
-        function onDeviceReady() {
-            //use AppMobi viewport to handle device resolution differences if you want
-            //AppMobi.display.useViewport(768,1024);
-
-            //hide splash screen now that our app is ready to run
-            AppMobi.device.hideSplashScreen();
-        }
-
-        //initial event handler to detect when appMobi is ready to roll
-        document.addEventListener("appMobi.device.ready",onDeviceReady,false);
-</script> 
-
-
-
+<html>
+<head><title>Polyfind</title>
 </head>
-	<h1>Wardrobe Mix</h1>
-	<h2>Here's what you can pair with {{ terms }}:</h2>
+	<h1>Polyfind</h1>
+	<h2>Here are some ideas:</h2>
 	{% for set in sets %}
 		<img src="{{ set.image_url() }}" height=480 width=480 border=5><br>
 			<a href="{{ set.image_url("y") }}" target="_blank">
