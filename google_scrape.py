@@ -36,4 +36,4 @@ def get_polyvore_from_google(terms):
 
 
 if __name__ == "__main__":
-	print [ s.image_url() for s in get_polyvore_from_google("mossimo cateye glasses") ]
+	print [ s.image_url() for s in get_polyvore_from_google(terms) ]

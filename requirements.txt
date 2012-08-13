@@ -3,3 +3,4 @@ Jinja2==2.6
 Werkzeug==0.8.3
 requests==0.13.6
 wsgiref==0.1.2
+beautifulsoup==4.1.1
