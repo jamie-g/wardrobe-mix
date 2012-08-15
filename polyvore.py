@@ -62,6 +62,11 @@ class PolyvoreSet(Polyvore):
         return base_url%(self.id, size)
         pass
 
+    def set_url(self):
+        set_url = "http://www.polyvore.com/cgi/set?id=%d"
+        return set_url%(self.id)
+        pass
+
     @property
     def things(self):
         if self._things != []:

@@ -1,19 +1,40 @@
 <html>
-<head><title>Polyfind</title>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Codystar' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <title>Polyfind</title>
 </head>
-	<h1>Polyfind</h1>
+<body>
+    <div>
+        <h1>Polyfind</h1>
+    </div>
 	<h2>Here are some ideas:</h2>
-	{% for set in sets %}
-		<img src="{{ set.image_url() }}" height=480 width=480 border=5><br>
-			<a href="{{ set.image_url("y") }}" target="_blank">
-			Enlarge image</a><br>
-	
-	{% endfor %}
+	<table class=test>
+		<tbody>
+		{% for set in sets %}
+		<tr>
+			<td><img src="{{ set.image_url() }}" height=480 width=480 border=5 align="center"></td>
+		</tr>
+		<tr align="center">
+			<td><a href="{{ set.set_url() }}" target="_blank">VIEW SET ON POLYVORE</a></td>
+		</tr>
+		{% endfor %}
+	</tbody></table>
+	<table width="500">
+		<tr>
 	{% if p > 1 %}
-	<a href="{{url_for("search", p=p-1, q=terms) | safe}}">&#60;&#60;prev</a>&nbsp;&nbsp;&nbsp;
+	<td align="left"><a href="{{url_for("search", p=p-1, q=terms) | safe}}" class=nav>&#60;&#60;PREV</a></td>
 	{% endif %}
 	{% if more == True %}
-	<a href="{{url_for("search", p=p+1, q=terms) | safe}}">next&#62;&#62;</a><br>
+	<td align="right"><a href="{{url_for("search", p=p+1, q=terms) | safe}}" class=nav>NEXT&#62;&#62;</a></td>
 	{% endif %}
-	<a href="/">Search again</a>
+		</tr>
+	</table>
+	<br>
+	<a href="/">SEARCH AGAIN</a>
+    <div class=bottom>
+    </div>
+</body>
 </html>
