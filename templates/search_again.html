@@ -7,10 +7,10 @@
     <title>Polyfind</title>
 </head>
 <body>
-	<h1>Polyfind</h1>
+	<a href="/"><h1>Polyfind</h1></a>
 	<h2>Your query did not return any results. Please search again.</h2>
 	<form name="input" action="{{ url_for("search") }}" method="get" id="searchbox">
-	<input type="text" name="q" id="search" value="Enter an item, barcode, theme or event"/><input type="submit" value="Submit" id="submit"><br />
+	<input type="text" name="q" id="search" value="Enter an item, barcode, theme or event" onclick="this.value='';"/><input type="submit" value="Submit" id="submit"><br />
 	</form>
 	<p><b>TIP:</b> For more results, try searching with fewer or different terms. Searching for Chloe Purse may not return the same results as Chloe Handbag, Chloe Tote, or Chloe Bag. For precise results, use quotation marks (ex: "Chloe Saskia Bag")<p>
 	</div>

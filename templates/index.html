@@ -8,21 +8,21 @@
 </head>
 <body>
     <div>
-        <h1>Polyfind</h1>
+        <a href="/"><h1>Polyfind</h1></a>
     </div>
     <div>
 	<p><i>Love a unique piece of clothing, but not sure how to wear it? <br>Find out how others have styled it before it becomes another artifact in your closet. <br>Use one of the search boxes below to find related sets! </i></p>
 	<form name="input" action="{{ url_for("search") }}" method="get" id="searchbox">
-	<input type="text" name="q" id="search" value="Search by item"/><input type="submit" value="Submit" id="submit"><br />
+	<input type="text" name="q" id="search" value="Search by item" onclick="this.value='';" /><input type="submit" value="Submit" id="submit"><br />
 	</form>
 	<form name="input" action="{{ url_for("search") }}" method="get" id="searchbox">
-	<input type="text" name="q" id="search" value="Search by barcode" /><input type="submit" value="Submit" id="submit"><br />
+	<input type="text" name="q" id="search" value="Search by barcode" onclick="this.value='';" /><input type="submit" value="Submit" id="submit"><br />
 	</form>
     <form name="input" action="{{ url_for("search") }}" method="get" id="searchbox">
-    <input type="text" name="q" id="search" value="Search by theme or event: (ex: 'Bonnie and Clyde' or 'cocktail party')"/><input type="submit" value="Submit" id="submit"><br />
+    <input type="text" name="q" id="search" value="Search by theme or event: (ex: 'Bonnie and Clyde' or 'cocktail party')" onclick="this.value='';"/><input type="submit" value="Submit" id="submit"><br />
     </form>
     <form name="input" action="{{ url_for("search") }}" method="get" id="searchbox">
-    <input type="text" name="q" id="search" value="Search by style icon: (ex: 'Audrey Hepburn')" /><input type="submit" value="Submit" id="submit"><br />
+    <input type="text" name="q" id="search" value="Search by style icon: (ex: 'Audrey Hepburn')" onclick="this.value='';" /><input type="submit" value="Submit" id="submit"><br />
     </form>
 	<p><i>For more search results, enter fewer search terms. For more exact results, put quotes around search terms. ex: "black peeptoe wedge"</i></p>
     </div>
